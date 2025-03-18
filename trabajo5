@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+  printf("Múltiplos de 7 y 9 entre 0 y 1000:\n");
+
+  int i = 0; // Inicializamos el contador
+
+  while (i <= 1000) {
+    if (i % 7 == 0 && i % 9 == 0) {
+      printf("%d\n", i);
+    }
+    i++; // Incrementamos el contador en cada iteración
+  }
+
+  return 0;
+}
