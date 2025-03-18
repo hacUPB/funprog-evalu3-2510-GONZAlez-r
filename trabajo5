@@ -3,13 +3,13 @@
 int main() {
   printf("Múltiplos de 7 y 9 entre 0 y 1000:\n");
 
-  int i = 0; // Inicializamos el contador
+  int i = 0;
 
   while (i <= 1000) {
     if (i % 7 == 0 && i % 9 == 0) {
       printf("%d\n", i);
     }
-    i++; // Incrementamos el contador en cada iteración
+    i++; 
   }
 
   return 0;
