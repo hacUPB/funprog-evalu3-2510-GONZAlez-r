@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    double num, suma = 0.0, media;
+
+   
+    printf("Ingrese la cantidad de números: ");
+    scanf("%d", &n);
+
+    if (n <= 0) {
+        printf("Debe ingresar al menos un número.\n, preferiblemente uno positivo");
+        return 1;
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("Ingrese un número: ");
+        scanf("%lf", &num);
+        suma += num; 
+    }
+    media = suma / n;
+
+    printf("La media de los %d números ingresados es: %.2lf\n", n, media);
+
+    return 0;
+}
