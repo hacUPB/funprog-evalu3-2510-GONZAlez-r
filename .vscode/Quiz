@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    int intentos = 0;   // añadi la varible intentos 
+
+    printf("Bienvenido al juego de adivinar el numero\n");
+    
+    do {    // añadi de manera correcta el bucle while 
+        printf("Ingresa un numero entre 1 y 100: ");
+        scanf("%d", &num);
+        intentos++; // agregue la sumatoria de intentos
+        
+        if (num < 15) {
+            printf("El numero es mayor, intenta de nuevo.\n");  // añadi los ;
+        } else if (num > 15) {
+            printf("El numero es menor, intenta de nuevo.\n");  // añadi los ;
+        }
+    } while (num != 15); //añadi de manera correcta el bucle while 
+    
+    printf("Felicidades, has ingresado el numero correcto!\n"); // agregue los ;
+    printf("Numero de intentos: %d\n", intentos); //agregue el total de intentos 
+    
+    return 0; // agregue el comando return
+}
