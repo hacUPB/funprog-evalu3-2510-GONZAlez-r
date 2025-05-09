@@ -1,0 +1,16 @@
+#include <stdio.h>
+void encabezado(void);
+int main(int argc, char const *argv[])
+{
+    encabezado();
+    return 0;
+}
+ void encabezado(void)
+{
+    printf("************************************\n");
+    printf("*Universidad Pontificia Bolivariana*\n");
+    printf("*      Escuela De Ingenieria       *\n");
+    printf("*     Santiago Gonzalez URANGO     *\n");
+    printf("*             000573981            *\n");
+    printf("************************************\n");
+}
