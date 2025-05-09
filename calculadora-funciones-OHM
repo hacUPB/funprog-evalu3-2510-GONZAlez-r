@@ -1,0 +1,90 @@
+#include <stdio.h>
+
+float pedir_float(const char *mensaje) {
+    float valor;
+    printf("%s", mensaje);
+    scanf("%f", &valor);
+    return valor;
+}
+
+void calcular_resistencia_conductor() {
+    float rho = pedir_float("Resistividad (Ohm·m): ");
+    float area = pedir_float("Área transversal (m^2): ");
+    float largo = pedir_float("Longitud del conductor (m): ");
+
+    if (area != 0) {
+        float resultado = (rho * largo) / area;
+        printf("Resistencia total: %.2f Ohm\n", resultado);
+    } else {
+        printf("Área inválida. No puede ser cero.\n");
+    }
+}
+
+void calcular_ley_ohm() {
+    float r = pedir_float("Resistencia en ohmios: ");
+    float v = pedir_float("Voltaje en voltios: ");
+
+    if (r != 0) {
+        float corriente = v / r;
+        printf("La corriente es: %.2f A\n", corriente);
+    } else {
+        printf("Error: la resistencia debe ser mayor a cero.\n");
+    }
+}
+
+void calcular_factor_potencia() {
+    float s = pedir_float("Potencia aparente (VA): ");
+    float p = pedir_float("Potencia activa (W): ");
+
+    if (s != 0) {
+        float fp = p / s;
+        printf("Factor de potencia: %.2f\n", fp);
+    } else {
+        printf("La potencia aparente no puede ser cero.\n");
+    }
+}
+
+void calcular_resistencia_led() {
+    float fuente = pedir_float("Voltaje de la fuente (V): ");
+    float led = pedir_float("Voltaje del LED (V): ");
+    float i = pedir_float("Corriente deseada (A): ");
+
+    if (i != 0) {
+        float r_led = (fuente - led) / i;
+        printf("Resistencia necesaria: %.2f Ohm\n", r_led);
+    } else {
+        printf("La corriente no puede ser cero.\n");
+    }
+}
+
+int main() {
+    int opcion = 0;
+
+    while (opcion != 5) {
+        printf("\n*** Herramientas Eléctricas ***\n");
+        printf("1. Resistencia de conductor\n");
+        printf("2. Ley de Ohm\n");
+        printf("3. Factor de potencia\n");
+        printf("4. Resistencia para LED\n");
+        printf("5. Terminar\n");
+        printf("Elegir una opción: ");
+        scanf("%d", &opcion);
+
+        if (opcion == 1) {
+            calcular_resistencia_conductor();
+        } else if (opcion == 2) {
+            calcular_ley_ohm();
+        } else if (opcion == 3) {
+            calcular_factor_potencia();
+        } else if (opcion == 4) {
+            calcular_resistencia_led();
+        } else if (opcion == 5) {
+            printf("Gracias por usar el programa.\n");
+        } else {
+            printf("Opción no válida. Intenta de nuevo.\n");
+        }
+    }
+
+    return 0;
+}
+
