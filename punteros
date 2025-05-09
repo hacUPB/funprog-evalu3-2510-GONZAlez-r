@@ -1,0 +1,73 @@
+#include <stdio.h>
+
+int main(int argc, char const *argv[])
+{
+    int y;
+    int *x = NULL;
+    y = 35;
+    x = &y;
+
+    printf("Direccion de memoria de y %p\n", &y);
+    printf("Contenido de x %p\n", x);
+    printf("Contenido de y %d\n", y);
+
+    (*x)= 100;
+    printf("Contenido y %d\n", (*x));
+    y = (*x) * 2;
+
+    
+    return 0;
+
+}
+
+
+
+
+
+2.
+#include <stdio.h>
+
+int suma(int *, int*);
+
+int main(int argc, char const *argv[])
+{
+    int resultado, num1, num2;
+    num1 = 100;
+    num2 = 400;
+    resultado = suma(&num1, &num2);
+    printf("%d\n", resultado);
+    printf("num1 = %d, num2 = %d\n", num1, num2);
+    return 0;
+
+}
+
+int suma(int *ptr_n1, int *ptr_n2)
+{
+    int res_suma;
+    res_suma = (*ptr_n1) + (*ptr_n2);
+    (*ptr_n1) = 999;
+    (*ptr_n2) = 777;
+    return res_suma;
+}
+
+
+
+3.#include <stdio.h>
+int main()
+{
+    int i = 100, *p1, *p2;
+    p1 = &i;
+    p2 = p1;
+    if (p1 == p2)
+    {
+        printf("p1 apunta a la misma dirección de memoria que p2\n");
+    }
+    *p1 = *p1 + 2;
+    printf("El valor de * p2 es % d\n", *p2);
+    (*p2)++;
+    printf("El valor de * p1 es % d\n", *p1);
+    i--;
+    printf("El valor de i es % d\n", i);
+    
+    return 0; 
+}
