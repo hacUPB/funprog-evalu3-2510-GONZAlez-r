@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+int main() {
+    int opcion;
+    float numero1, numero2, resultado;
+
+    printf("Calculadora\n");
+    printf("1. Suma\n2. Multiplicación\n3. División\n");
+    printf("Seleccione una operación: ");
+    scanf("%d", &opcion);
+
+    printf("Ingrese el primer número: ");
+    scanf("%f", &numero1);
+    printf("Ingrese el segundo número: ");
+    scanf("%f", &numero2);
+
+    switch (opcion) {
+        case 1:
+            resultado = numero1 + numero2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 2:
+            resultado = numero1 * numero2;
+            printf("Resultado: %.2f\n", resultado);
+            break;
+        case 3:
+            if (numero2 != 0) {
+                resultado = numero1 / numero2;
+                printf("Resultado: %.2f\n", resultado);
+            } else {
+                printf("Error: División por cero no permitida.\n");
+            }
+            break;
+        default:
+            printf("Opción no válida.\n");
+    }
+
+    return 0;
+}
+
